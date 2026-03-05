@@ -20,7 +20,7 @@ def method2():
     y = np.cos(x)**3
     n = len(x)-1
     h = (x[-1] - x[0]) / n
-    integral = 3*h / 8 * (y[0] + 3*np.sum(y[1:12:3] + y[2:n:3]) + 2*np.sum(y[3:n-2:3]) + y[-1])
+    integral = 3*h / 8 * (y[0] + 3*np.sum(y[1:n:3] + y[2:n:3]) + 2*np.sum(y[3:n-2:3]) + y[-1])
     return integral
 
 def method3():
@@ -36,3 +36,4 @@ def method3():
 print("method1 : ", method1())
 print("method2 : ", method2())
 print("method3 : ", method3())
+
