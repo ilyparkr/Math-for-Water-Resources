@@ -15,14 +15,10 @@ maxinterations = 20
 for i in range(1, maxinterations+1):
     fx = f(x0)
     dfx = fprime(x0)
-    
-    if abs(dfx) < epsilon:
-        print("Error: slope is too close to 0 can't calculate")
-        break
 
     x_next = x0 - (fx/dfx)
 
-    if abs(x_next - x0) < tolerance:
+    if np.abs(f(x_next)) < epsilon:
         print(f"Solution : x = {x_next}")
         print(f"interations : {i+1}")
         break
@@ -30,4 +26,5 @@ for i in range(1, maxinterations+1):
     x0 = x_next
 
 else:
+
     print(f"Can't find the right root in {maxinterations}")
